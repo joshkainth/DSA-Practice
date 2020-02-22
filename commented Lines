@@ -1,0 +1,26 @@
+def append_at_after_product(self, product_object, product_name):
+    LinkedList.__size += 1
+    LinkedList.total_amount += product_object.price
+
+    product_object.next = None
+    product_object.previous = None
+
+    temp = self.current
+    target = None
+
+    while temp.previous is not None:
+        if temp.title == product_name:
+            address1 = target
+            address2 = temp
+
+            target.next = product_object
+            temp.previous = product_object
+
+            product_object.next = address2
+            product_object.previous = address1
+            break
+
+        target = temp
+        temp = temp.previous
+
+append_at_after_product() used in circularLinkedList.py for appending product at particular position
