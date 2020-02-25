@@ -194,8 +194,27 @@ class LinkedList:
         prd2.delivery_date = temp_delivery_date
 
     def swap_product(self, prd1, prd2):
-        pass
+        print("Before: [prd1.title: {}] [prd1.next: {}] [prd1.previous: {}]".format(prd1.title, prd1.next, prd1.previous))
+        print("Before: [prd2.title: {}] [prd2.next: {}] [prd2.previous: {}]".format(prd2.title, prd2.next, prd2.previous))
 
+        prd1.previous.next = prd2
+        prd2.next.previous = prd1
+
+        prd1.next = prd2.next
+        prd1.previous = prd2
+
+        prd2.next = prd1
+        prd2.previous = prd1.previous
+
+        if prd1 == self.head:
+            self.head = prd2
+
+        if prd2 == self.current:
+            self.current = prd1
+
+        print("After: [prd1.title: {}] [prd1.next: {}] [prd1.previous: {}]".format(prd1.title, prd1.next, prd1.previous))
+        print("After: [prd2.title: {}] [prd2.next: {}] [prd2.previous: {}]".format(prd2.title, prd2.next, prd2.previous))
+        print()
 
     def bubble_sort(self):
 
@@ -206,7 +225,7 @@ class LinkedList:
             for j in range(0, LinkedList.size-i-1):
 
                 if jTemp.price > jTemp.next.price:
-                    self.swap_data(jTemp, jTemp.next)
+                    self.swap_product(jTemp, jTemp.next)
 
                 jTemp = jTemp.next
 
