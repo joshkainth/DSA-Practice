@@ -203,6 +203,7 @@ class LinkedList:
         prd1.next = prd2.next
         prd1.previous = prd2
 
+
         prd2.next = prd1
         prd2.previous = prd1.previous
 
