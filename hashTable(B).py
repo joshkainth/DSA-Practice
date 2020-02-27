@@ -71,6 +71,7 @@ hTable.put(s1)
 hTable.put(s2)
 hTable.put(s3)
 hTable.put(s4)
+hTable.put(s5)
 
 hTable.iterate()
 print("--Contains---")
