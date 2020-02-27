@@ -50,6 +50,7 @@ class HashTable:
         index = self.hash_function(data)
         if self.table[index] == data:
             self.table[index] = None
+            self.size -= 1
             print(data, "is removed from table :)")
         else:
             print("Sorry!!, ", data, " not found in table :(")

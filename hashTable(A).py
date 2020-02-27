@@ -30,12 +30,23 @@ class HashTable:
         for key in self.table[index]:
             if key == data:
                 return index
+                # print(data," Found at index: ", index)
             else:
-                return -1
+                return self.search(key)
+                # print(data," not Found")
+
+    def remove_key(self, data):
+        index = self.hash_function(data)
+
+        for key in self.table[index]:
+            if key == data:
+                self.table[index].remove(key)
+                print(key," is removed from table")
+            else:
+                return self.remove_key(key)
 
     def iterate(self):
         for i in range(0, len(self.table)):
-
             if len(self.table[i]) != 0:
                 print("--Index at {}---".format(i))
                 for data in self.table[i]:
@@ -58,6 +69,15 @@ print("Total Element Added: ",hTable.size)
 print("--Contains---")
 print(hTable.search(110))
 print(hTable.search(56))
+# hTable.search(110)
+# hTable.search(56)
 print("-------------")
 
-hTable.iterate()
+print("---Remove----")
+hTable.remove_key(48)
+hTable.remove_key(110)
+print("-------------")
+
+print(hTable.table)
+print(len(hTable.table))
+# hTable.iterate()
