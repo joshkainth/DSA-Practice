@@ -42,8 +42,6 @@ class HashTable:
             if key == data:
                 self.table[index].remove(key)
                 print(key," is removed from table")
-            else:
-                return self.remove_key(key)
 
     def iterate(self):
         for i in range(0, len(self.table)):
