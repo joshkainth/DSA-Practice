@@ -7,18 +7,15 @@ class LinkedList:
         self.head = None
         self.current = None
 
-    def __str__(self):
-        return "{} \t {}".format(self.head, self.current)
-
     def append_product(self, product_object):
 
         LinkedList.size += 1
-        LinkedList.total_amount += product_object.price
+        # LinkedList.total_amount += product_object.price
 
         product_object.next = None
         product_object.previous = None
-        print(">> Product Details of {}: {}".format(product_object.title, product_object.__dict__))
-        print(">> Product hash address of {} : {}\n".format(product_object.title, product_object))
+        # print(">> Product Details of {}: {}".format(product_object.title, product_object.__dict__))
+        # print(">> Product hash address of {} : {}\n".format(product_object.title, product_object))
 
         if self.head is None:
             self.head = product_object
