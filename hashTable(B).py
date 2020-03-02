@@ -15,7 +15,6 @@ class HashTable:
 
         for i in range(capacity):
             objects = []
-            # objects = cll.LinkedList()
             self.table.append(objects)
 
     def hash_function(self, key):

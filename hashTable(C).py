@@ -28,14 +28,11 @@ class HashTable:
         key = student.roll_no + student.age
         index = self.hash_function(key)
 
-        objects = lRef.LinkedList()
-        objects.append_product(student)
-
         # if self.table[index] is None:
         self.size += 1
 
-        self.table[index] = objects
-        print("Data Added {} at index {}".format(student, index))
+        self.table[index] = student
+        print("{} Data Added at index {}".format(student.name, index))
 
     def search(self, student):
         key = student.roll_no + student.age
@@ -57,12 +54,14 @@ class HashTable:
                 print(key, " is removed from table")
 
     def iterate(self):
-        for i in range(0, len(self.table)):
-            if len(self.table[i]) != 0:
-                print("--Index at {}---".format(i))
-                for data in self.table[i]:
-                    print(data)
-                # print("----------------")
+        for data in self.table:
+            print(data)
+        # for i in range(0, len(self.table)):
+        #     if len(self.table) != 0:
+        #         print("--Index at {}---".format(i))
+        #         for data in self.table[i]:
+        #             print(data)
+        #         # print("----------------")
 
 hTable = HashTable(5)
 s1 = Student("John", 101, 22)
@@ -77,6 +76,5 @@ hTable.put(s3)
 hTable.put(s4)
 hTable.put(s5)
 
-# hTable.iterate()
-
+hTable.iterate()
 print(hTable.table)
