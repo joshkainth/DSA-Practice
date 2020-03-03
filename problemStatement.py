@@ -50,8 +50,8 @@ class HashTable:
         print("~~~~~~~~~~~~~")
 
     def get(self, word):
-        object = WordCounter(word)
-        index = self.hash_function(object.words.lower())
+        objects = WordCounter(word)
+        index = self.hash_function(objects.words.lower())
         print(self.buckets[index])
 
 
