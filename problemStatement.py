@@ -28,7 +28,8 @@ class HashTable:
         return hash_code
 
     def put(self, words):
-        for word in words:
+
+        for word in words.split():
             objects = WordCounter(word)
             index = self.hash_function(objects.words.lower())
 
@@ -65,11 +66,11 @@ capacity = len(review1.split()) + len(review2.split()) + len(review3.split()) + 
 
 hTable = HashTable(capacity)
 
-hTable.put(review1.split())
-hTable.put(review2.split())
-hTable.put(review3.split())
-hTable.put(review4.split())
-hTable.put(review5.split())
+hTable.put(review1)
+hTable.put(review2)
+hTable.put(review3)
+hTable.put(review4)
+hTable.put(review5)
 
 hTable.iterate()
 
