@@ -15,6 +15,7 @@ class WordCounter:
     #     return split
 
 class HashTable:
+
     def __init__(self, capacity=10):
         self.capacity = capacity
         self.size = 0
@@ -24,7 +25,7 @@ class HashTable:
             self.buckets.append(None)
 
     def hash_function(self, word):
-        hash_code = int(hashlib.sha512(word.encode("utf-8")).hexdigest(), 16) % self.capacity
+        hash_code = int(hashlib.sha256(word.encode("utf-8")).hexdigest(), 16) % self.capacity
         return hash_code
 
     def put(self, words):
@@ -36,10 +37,10 @@ class HashTable:
             if self.buckets[index] is None:
                 self.buckets[index] = objects
                 self.size += 1
-                print("^^ {} Inserted in HashTable".format(objects.words))
+                print("^^ {} Inserted in HashTable | index {}".format(objects.words,index))
             else:
                 self.buckets[index].frequency += 1
-                print("## {} Frequency Updated to {} in HashTable".format(objects.words, objects.frequency))
+                print("## {} Frequency Updated to {} in HashTable | index {}".format(objects.words, objects.frequency, index))
 
     def iterate(self):
         count = 0
@@ -74,10 +75,10 @@ hTable.put(review5)
 
 hTable.iterate()
 
-# print("****************")
-# hTable.get("college")
-# print("****************")
-# print()
+print("****************")
+hTable.get("also")
+print("****************")
+print()
 
 
 print("[Table Size] {} | [Total Words] {}".format(len(hTable.buckets), hTable.size))
