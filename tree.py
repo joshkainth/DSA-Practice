@@ -168,4 +168,3 @@ tRef.maximum_value(tRef.root)
 # tRef.search_product(12260, tRef.root)
 
 tRef.search(tRef.root, 15620)
-tRef.search(tRef.root, 12260)
