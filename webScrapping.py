@@ -30,7 +30,6 @@ class HashTable:
 
         for i in range(capacity):
             objects = []
-            # objects = cll.LinkedList()
             self.table.append(objects)
 
     def hash_function(self, key):
@@ -82,4 +81,4 @@ for names in span_tags:
 print()
 hTable.iterate()
 print()
-print(hTable.table.__str__())
+print(hTable.table)
