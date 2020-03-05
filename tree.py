@@ -143,17 +143,6 @@ tRef.append_product(tRef.root, Products(301, "Samsung A10", 3.5, "20% off", 1562
 tRef.append_product(tRef.root, Products(401, "Samsung A8", 4.2, "15% off", 13260, "February 15"))
 tRef.append_product(tRef.root, Products(501, "Samsung A6", 3.8, "10% off", 13550, "February 10"))
 
-# tRef.root = tRef.append_product(None, Number(50))
-#
-# tRef.append_product(tRef.root, Number(40))
-# tRef.append_product(tRef.root, Number(30))
-# tRef.append_product(tRef.root, Number(80))
-# tRef.append_product(tRef.root, Number(90))
-# tRef.append_product(tRef.root, Number(140))
-# tRef.append_product(tRef.root, Number(55))
-# tRef.append_product(tRef.root, Number(45))
-
-
 # tRef.pre_order(tRef.root)
 tRef.show_tree()
 # print("Root Element: ",tRef.root.show_product_info())
@@ -167,4 +156,4 @@ tRef.maximum_value(tRef.root)
 # tRef.search_product(15620, tRef.root)
 # tRef.search_product(12260, tRef.root)
 
-tRef.search(tRef.root, 15620)
+# tRef.search(tRef.root, 15620)
