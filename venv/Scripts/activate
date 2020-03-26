@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\Project (Java + Python)\python project\DSA-Practice\venv"
+VIRTUAL_ENV="C:\Users\joshg\Documents\PythonProjects2020\DSA-Practice\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
